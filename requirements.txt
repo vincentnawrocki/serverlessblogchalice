@@ -1,0 +1,5 @@
+chalice
+dnspython
+Jinja2
+pymongo
+python-slugify

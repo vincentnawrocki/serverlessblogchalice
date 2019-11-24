@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="row" id="home-page">
+    <div class="col-2" id="blog-sidebar">
+      {% for post in blog_posts %}
+        <a class="blog-post" href="/api/blog/{{ post.slug }}">
+            <p>{{ post.title }}</p>
+        </a>
+      {% endfor %}
+    </div>
+    <div class="col-10" id="current_blog">
+        <h2 class="text-center blog-title">{{ current_blog.title }}</h2>
+        <p class="text-center blog-date">{{ current_blog.create_date.strftime('%m-%d-%Y') }}</p>
+        <p class="text-center blog-content">{{ current_blog.content }}</p>
+    </div>
+</div>
+{% endblock %}
